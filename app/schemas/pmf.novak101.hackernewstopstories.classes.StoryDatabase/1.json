@@ -1,0 +1,52 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "8ef3cd7a3d363dd7701e86b9be487243",
+    "entities": [
+      {
+        "tableName": "HackerNewsStory",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`storyID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `story_url` TEXT, `story_title` TEXT, `story_score` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "storyID",
+            "columnName": "storyID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "storyURL",
+            "columnName": "story_url",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "storyTitle",
+            "columnName": "story_title",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "storyScore",
+            "columnName": "story_score",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "storyID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '8ef3cd7a3d363dd7701e86b9be487243')"
+    ]
+  }
+}
